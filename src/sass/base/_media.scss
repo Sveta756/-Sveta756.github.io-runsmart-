@@ -1,4 +1,9 @@
 @media (max-width: 1200px) {
+    .catalog {
+        &-item {
+            margin: 0 10px 20px 10px;
+        }
+    }
 }
 
 @media (max-width: 991px) {
@@ -10,6 +15,15 @@
             font-size: 16px;
         }
     }
+    .carousel__inner {
+        max-width: 600px;
+    }
+    .catalog {
+        &-item {
+            margin: 0 0px 20px 0px;
+        }
+    }
+
 }
 
 @media (max-width: 767px) {
@@ -54,7 +68,49 @@
             font-size: 30px;
         }
     }
-
+    .catalog {
+        &__content {
+            align-items: center; 
+            flex-direction: column;
+        }
+        padding-bottom: 50px;
+        &__tabs {
+            margin-top: 50px;
+        }
+        &__tab {
+            div {
+            font-size: 14px;
+        }
+        }
+        &-item {
+            margin-bottom: 50px;
+        }
+    }
+    .slick-dots {
+       button {
+           display: none;
+       }
+    }
+    .reviews {
+        &__blocks {
+            flex-direction: column; 
+        }
+        &__photo {
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
+        &__text {
+            text-align: center;
+            padding-right: 0;
+            margin-left: 0;
+        }
+    }
+    .footer {
+        &__info {
+            width: 370px;
+        }
+    }
+    
 }
 
 @media (max-width: 575px) {
@@ -145,5 +201,51 @@
         width: 290px;
         font-size: 14px;
     }
+    .catalog {
+        padding-bottom: 50px;
+        &__title {
+            font-size: 26px;
+        }
+        &-item {
+            width: 290px;
+        }
+        &__tabs {
+            flex-direction: column; 
+            align-items: center;
+            margin-top: 30px;
+            transform: none;
+ 
+        }
+        &__tab {
+            margin-top: 20px;
+        }
+    }
+    .reviews {
+       h2 {
+            font-size: 26px;
+        }
+    }
+    .footer {
+        &__info {
+            width: 320px;
+            padding: 40px 39px 30px 39px;
+        }
+    }
+    .modal {
+        width: 260px;
+        min-height: 250px;
+        padding: 18px 20px 20px 20px;
+        &__close {
+            right: -25px;
+        }
+    }
+
+    .feed-form_mt25 {
+        width: 220px;
+        button {
+           width: 220px; 
+        }
+    }
+    
 }
 

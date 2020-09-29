@@ -1,14 +1,15 @@
 $(document).ready(function(){
     $('.carousel__inner').slick({
         speed: 1200,
-        adaptiveHeight: true,
+        adaptiveHeight: false,
         prevArrow: '<button type="button" class="slick-prev"><img src="icon/chevron-left-solid.png"></button>',
         nextArrow: '<button type="button" class="slick-next"><img src="icon/chevron-right-solid.png"></button>',
         responsive: [
             {
-                breakpoint: 992,
+                breakpoint: 767,
                 settings: {
-                    dots: true,
+                    autoplay: true,
+                    dots: false,
                     arrows: false
                 }
             }
@@ -33,4 +34,66 @@ $(document).ready(function(){
 
     toggleSlide('.catalog-item__link');
     toggleSlide('.catalog-item__back');
+
+    // modal 
+    $('[data-modal=consultation]').on('click', function() {
+        $('.overlay, #consultation').fadeIn('slow');
+    });
+    $('.modal__close').on('click', function() {
+       $('.overlay, #consultation, #thanks, #order').fadeOut('slow'); 
+    });
+
+    $('.button_mini').each(function(i) {
+        $(this).on('click', function() {
+            $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text())
+            $('.overlay, #order').fadeIn('slow');
+        });
+    });
+  
+
+    function valideForms(form){
+        $(form).validate({
+            rules: {
+                name: "required",
+                phone: "required",
+                email: {
+                    required: true,
+                    email: true 
+                }
+            },
+            messages: {
+                name: "Пожалуйста, введите свое имя",
+                phone: "Пожалуйста, введите свой номер телефона",
+                email: {
+                  required: "Пожалуйста, введите свою почту",
+                  email: "Неправильно введен адрес почты"
+                }
+            }
+        });
+    };
+
+    valideForms('#consultation-form');
+    valideForms('#consultation form');
+    valideForms('#order form');
+    
+
+
+
+    //smooth scroll and pageup
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 1600) {
+            $('.pageup').fadeIn();
+        } else {
+            $('.pageup').fadeOut();
+        }
+    });
+
+    $("a[href=#up]").click(function(){
+        var _href = $(this).attr("href");
+        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+        return false;
+    });
+
+    new WOW().init();
 });
+
