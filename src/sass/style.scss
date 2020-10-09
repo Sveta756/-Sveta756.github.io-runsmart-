@@ -1,0 +1,25 @@
+@import 'base/variables';
+@import 'libs/bootstrap-grid.min';
+@import 'libs/bootstrap-reboot.min';
+@import 'libs/font';
+@import 'libs/slick';
+* {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+}
+
+
+@import 'blocks/promo';
+@import 'blocks/header';
+@import 'blocks/buttons';
+@import 'blocks/advantages';
+@import 'blocks/title';
+@import 'blocks/consultation';
+@import 'blocks/forms';
+@import 'blocks/_carousel';
+@import 'blocks/_catalog';
+@import 'blocks/footer';
+@import 'blocks/reviews';
+@import 'blocks/modal';
+@import 'blocks/_pageup';
+@import 'base/animations';
+@import 'base/media';
